@@ -7,6 +7,9 @@ export function searchJobs(jobs, query) {
             job.company,
             job.role,
             job.post,
+            job.payout,
+            job.location,
+            job.experience,
             ...job.tags
         ].join(' ').toLowerCase();
 

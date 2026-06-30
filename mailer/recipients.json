@@ -1,0 +1,28 @@
+[
+  {
+    "email": "test@test.com",
+    "name": "Test User",
+    "categories": [
+      "unpaid",
+      "remote"
+    ],
+    "addedAt": "2026-06-30T15:32:54.441Z"
+  },
+  {
+    "email": "other@test.com",
+    "name": "Other User",
+    "categories": [
+      "paid"
+    ],
+    "addedAt": "2026-06-30T15:32:54.455Z"
+  },
+  {
+    "email": "dup@test.com",
+    "name": "Dup User",
+    "categories": [
+      "onsite",
+      "remote"
+    ],
+    "addedAt": "2026-06-30T15:32:54.455Z"
+  }
+]

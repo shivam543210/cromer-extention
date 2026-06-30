@@ -21,10 +21,20 @@
 
     <div class="toolbar">
         <input type="text" id="searchInput" placeholder="Search companies, roles, tags, etc...">
+        <div class="sort-controls">
+            <label>Sort:</label>
+            <select id="sortSelect">
+                <option value="newest">Newest</option>
+                <option value="payout">Payout (High)</option>
+                <option value="company">Company (A-Z)</option>
+            </select>
+        </div>
         <div class="bulk-actions">
             <button id="btnExportSelected">Export Selected</button>
             <button id="btnCopyEmails">Copy Emails</button>
             <button id="btnSendN8n">Send to n8n</button>
+            <button id="btnSendEmail">Send Email</button>
+            <button id="btnMergeDuplicates" style="background:#f59e0b;">Merge Duplicates</button>
         </div>
     </div>
 
@@ -37,6 +47,9 @@
                     <th>Role</th>
                     <th>Emails</th>
                     <th>Phones</th>
+                    <th>Links</th>
+                    <th>Payout</th>
+                    <th>Posted At</th>
                     <th>Tags</th>
                     <th>Status</th>
                     <th>Notes</th>
@@ -60,8 +73,48 @@
             <span class="close-modal" id="closeModal">&times;</span>
             <h2 id="modalCompany">Company</h2>
             <p id="modalRole">Role</p>
+            <div id="modalMeta" class="modal-meta"></div>
+            <div id="modalLinks" class="modal-links"></div>
             <hr>
             <pre id="modalPost"></pre>
+            <div class="modal-footer">
+                <button id="btnOpenPost" class="btn-open" style="display:none">Open Post</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settingsModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal" id="closeSettings">&times;</span>
+            <h2>Settings</h2>
+            <div style="margin: 15px 0;">
+                <label style="display:block;color:#aaa;margin-bottom:5px;">n8n Webhook URL</label>
+                <input type="text" id="settingsWebhook" placeholder="https://your-n8n-instance.com/webhook/..." style="width:100%;padding:10px;border-radius:4px;border:1px solid #333;background:#252525;color:#fff;">
+            </div>
+            <div style="margin: 15px 0;">
+                <label style="display:block;color:#aaa;margin-bottom:5px;">Email Server URL</label>
+                <input type="text" id="settingsEmailUrl" placeholder="http://localhost:3456 or https://your-app.vercel.app" style="width:100%;padding:10px;border-radius:4px;border:1px solid #333;background:#252525;color:#fff;">
+                <p style="color:#666;font-size:12px;margin-top:4px;">Run <code>npm start</code> in mailer/ for local, or deploy api/ to Vercel</p>
+            </div>
+            <div style="text-align:right;">
+                <button id="btnSaveSettings">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Send Email Modal -->
+    <div id="sendEmailModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal" id="closeSendEmail">&times;</span>
+            <h2>Send Email to All Contacts</h2>
+            <p style="margin: 10px 0; color: #aaa;" id="emailCount"></p>
+            <input type="text" id="emailSubject" placeholder="Subject" style="width:100%;padding:10px;border-radius:4px;border:1px solid #333;background:#252525;color:#fff;margin-bottom:10px;">
+            <textarea id="emailBody" placeholder="Message body..." style="width:100%;height:200px;padding:10px;border-radius:4px;border:1px solid #333;background:#252525;color:#fff;resize:vertical;font-family:inherit;"></textarea>
+            <div style="margin-top:10px;text-align:right;">
+                <button id="btnSendEmailsSubmit" style="background:#25D366;">Send to All</button>
+            </div>
+            <div id="emailProgress" style="margin-top:10px;color:#aaa;font-size:14px;"></div>
         </div>
     </div>
 

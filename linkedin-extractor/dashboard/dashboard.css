@@ -11,8 +11,14 @@ button:disabled { background: #555; cursor: not-allowed; }
 .metric-card h3 { font-size: 14px; color: #888; margin-bottom: 5px; }
 .metric-card p { font-size: 24px; font-weight: bold; color: #fff; }
 
-.toolbar { display: flex; justify-content: space-between; margin-bottom: 15px; }
-#searchInput { width: 300px; padding: 8px; border-radius: 4px; border: 1px solid #333; background: #1e1e1e; color: #fff; }
+.toolbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; gap: 10px; flex-wrap: wrap; }
+#searchInput { width: 250px; padding: 8px; border-radius: 4px; border: 1px solid #333; background: #1e1e1e; color: #fff; }
+.sort-controls { display: flex; align-items: center; gap: 6px; }
+.sort-controls label { color: #aaa; font-size: 14px; }
+#sortSelect { padding: 6px 8px; border-radius: 4px; border: 1px solid #333; background: #1e1e1e; color: #fff; cursor: pointer; }
+.modal-meta { margin: 8px 0; color: #aaa; font-size: 14px; }
+.modal-links { margin: 8px 0; }
+.modal-links a { color: #0A66C2; margin-right: 10px; font-size: 14px; }
 
 .table-container { overflow-x: auto; background: #1e1e1e; border-radius: 8px; border: 1px solid #333; }
 table { width: 100%; border-collapse: collapse; }
@@ -30,3 +36,8 @@ tr:hover { background: #2a2a2a; }
 .close-modal { position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; color: #aaa; }
 .close-modal:hover { color: #fff; }
 pre { white-space: pre-wrap; margin-top: 15px; font-family: inherit; font-size: 14px; color: #ccc; }
+.modal-footer { margin-top: 15px; text-align: right; }
+.modal-footer button { margin-left: 0; }
+#emailSubject, #emailBody { outline: none; }
+#emailSubject:focus, #emailBody:focus { border-color: #0A66C2; }
+#emailProgress { white-space: pre-wrap; }

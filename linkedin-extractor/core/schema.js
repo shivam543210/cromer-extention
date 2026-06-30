@@ -3,12 +3,17 @@ export const JobSchema = {
     hash: "",
     company: "",
     role: "",
-    post: "",
+    text: "",
+    payout: "",
+    postedAt: "",
     emails: [],
     phones: [],
     links: [],
     tags: [],
     createdAt: "",
+    experience: "",
+    postingTime: "",
+    postUrl: "",
     lastSeenAt: "",
     expiresAt: "",
     status: "New",
@@ -21,6 +26,7 @@ export const RootSchema = {
     jobs: [],
     settings: {
         webhook: "",
+        emailServerUrl: "http://localhost:3456",
         retentionHours: 24
     },
     stats: {

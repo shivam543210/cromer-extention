@@ -1,0 +1,16 @@
+{
+  "name": "email-mailer",
+  "version": "1.0.0",
+  "description": "Send emails to extracted LinkedIn profile emails",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "cli": "node email-sender.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.4.2",
+    "express": "^4.18.2",
+    "nodemailer": "^6.9.0"
+  }
+}
